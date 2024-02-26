@@ -16,9 +16,6 @@ pipeline {
                 echo 'Git Version and Brach Check'
                 checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/adevopstech/maven-java-sample.git']])
             }
-            when {
-                branch '*/main'
-            }
         }
         stage('Maven Validate') {
             steps {
